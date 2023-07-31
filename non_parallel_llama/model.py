@@ -9,6 +9,8 @@ import torch.nn.functional as F
 import torch.nn as nn
 import torch
 
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 
 @dataclass
 class ModelArgs:
@@ -116,7 +118,7 @@ class Attention(nn.Module):
                 self.n_local_heads,
                 self.head_dim,
             )
-        ).cuda()
+        ).to(device)
         
         self.cache_v = torch.zeros(
             (
@@ -125,7 +127,7 @@ class Attention(nn.Module):
                 self.n_local_heads,
                 self.head_dim,
             )
-        ).cuda()
+        ).to(device)
 
     def forward(
         self,
