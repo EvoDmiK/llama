@@ -9,6 +9,7 @@ from misc.utils import *
 SEP            = os.path.sep 
 ROOT_PATH      = SEP.join(os.getcwd().split(SEP)[:-1])
 
+
 ## 체크포인트, 토크나이저 경로
 CKPT_PATH      = f'{ROOT_PATH}/checkpoints/7B-chat'
 MODEL_PATH     = f'{CKPT_PATH}/llama-2-7b-chat'
